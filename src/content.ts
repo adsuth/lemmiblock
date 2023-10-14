@@ -1,3 +1,5 @@
+import { LogMessageType } from "./lib/definitions"
+import { logToUser } from "./lib/logger"
 import { yt_getDismissButton } from "./lib/selectors"
 
 let INTERVAL_LOW_PRIORITY = null 
@@ -10,6 +12,9 @@ const bigIntervalAmount   = 10
 
 function intervalCallbackMid()
 {
+  logToUser( LogMessageType.SUCCESS, "This was a triumph!" )
+  logToUser( LogMessageType.NEUTRAL, "This was a neutral action" )
+
   const btn_dismiss = yt_getDismissButton() 
   if ( btn_dismiss )
   {
@@ -34,3 +39,4 @@ function main()
 }
 
 main()
+
