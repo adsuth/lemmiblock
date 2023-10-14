@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "Lemmiblock",
+  "description": "Chrome extension to skip that annoying anti-adblock popup on YouTube",
+  "version": "0.0.0",
+
+  "action":
+  { 
+    "default_popup": "index.html" 
+  },
+  "permissions": [],
+
+  "content_scripts": [
+    {
+      "js": [
+        "src/content.ts"
+      ],
+      "matches": [
+        "https://*.youtube.com/*"
+      ]
+    }
+  ],
+ 
+  "background": {
+    "service_worker": "src/background.ts"
+  }
+  
+}
