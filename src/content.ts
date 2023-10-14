@@ -12,10 +12,8 @@ const bigIntervalAmount   = 10
 
 function intervalCallbackMid()
 {
-  logToUser( LogMessageType.SUCCESS, "This was a triumph!" )
-  logToUser( LogMessageType.NEUTRAL, "This was a neutral action" )
+  const btn_dismiss = yt_getDismissButton()
 
-  const btn_dismiss = yt_getDismissButton() 
   if ( btn_dismiss )
   {
     btn_dismiss.click()
