@@ -2,7 +2,7 @@ import { LogMessageType, logFormatPrefix } from "./definitions";
 
 export function logToUser( type: LogMessageType = LogMessageType.NEUTRAL, ...data: any[] )
 {
-  console.log(
+  console.info(
     logFormatPrefix( type ), ...data
   )
 }

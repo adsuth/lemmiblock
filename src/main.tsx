@@ -1,9 +1,9 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import Popup from './Popup'
-import './popup.css'
+import React from "react"
+import ReactDOM from "react-dom/client"
+import Popup from "./lib/components/Popup"
+import "./css/popup.css"
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
+ReactDOM.createRoot( document.getElementById("root")! ).render(
   <React.StrictMode>
     <Popup />
   </React.StrictMode>

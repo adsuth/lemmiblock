@@ -1,31 +1,32 @@
-import { LogMessageType } from "./lib/definitions"
-import { logToUser } from "./lib/logger"
-import { yt_getDismissButton } from "./lib/selectors"
+import { yt_checkToBypass } from "./lib/youtube"
 
 let INTERVAL_LOW_PRIORITY = null 
 let INTERVAL_MID_PRIORITY = null 
-let INTERVAL_BIG_PRIORITY = null 
+let INTERVAL_TOP_PRIORITY = null 
 
 const lowIntervalAmount   = 1000
 const midIntervalAmount   = 500
-const bigIntervalAmount   = 10
+const topIntervalAmount   = 10
+
+const S = {
+  page_dismissed_on: null as string | null
+}
 
 function intervalCallbackMid()
 {
-  const btn_dismiss = yt_getDismissButton()
 
-  if ( btn_dismiss )
-  {
-    btn_dismiss.click()
-  }
+}
 
+function intervalCallbackTop()
+{
+  yt_checkToBypass()
 }
 
 function recreateIntervals()
 {
-  // INTERVAL_LOW_PRIORITY = setInterval( intervalCallbackMid, lowIntervalAmount )
-  INTERVAL_MID_PRIORITY = setInterval( intervalCallbackMid, midIntervalAmount )
-  // INTERVAL_BIG_PRIORITY = setInterval( intervalCallbackMid, bigIntervalAmount )
+  // INTERVAL_LOW_PRIORITY = setInterval( intervalCallbackLow, lowIntervalAmount )
+  // INTERVAL_MID_PRIORITY = setInterval( intervalCallbackMid, midIntervalAmount )
+  INTERVAL_TOP_PRIORITY = setInterval( intervalCallbackTop, topIntervalAmount )
 }
 
 /**
