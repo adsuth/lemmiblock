@@ -1,5 +1,6 @@
 import LOGO from "../../assets/128.png"
-const GITHUB_REPO_LINK = "https://github.com/adsuth/lemmiblock"
+import PageIndicators from "./PageIndicators"
+const GITHUB_REPO_LINK = "https://github.com/adsuth/lemmiblock/issues"
 
 function Popup() {
   return (
@@ -9,7 +10,7 @@ function Popup() {
         <h1>
           LEMMIBLOCK
         </h1>
-        <h2>
+        <h2 className="header--version">
           v{ chrome.runtime.getManifest().version }
         </h2>
       </div>
@@ -18,6 +19,8 @@ function Popup() {
         <img className="header--logo" src={ LOGO } alt="Lemmiblock's logo" />
       </div>
     </header>
+
+    <PageIndicators />
 
     <div id="popup--no-content-text">
       <p>
